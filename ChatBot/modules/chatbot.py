@@ -19,16 +19,20 @@ async def text_filter(_, __, m: Message):
 chatbot_filter = filters.create(text_filter)
 
 
-@app.on_message(((filters.text & filters.group & chatbot_filter) | filters.mentioned) & ~filters.bot)
+@app.on_message(
+    ((filters.text & filters.group & chatbot_filter) | filters.mentioned) 
+    & ~filters.bot 
+    & ~filters.sticker
+)
 async def chatbot(_, message: Message):
     """Replies with chatbot response if enabled or when mentioned."""
     chat_id = message.chat.id
 
     if not await is_chatbot_enabled(chat_id) and not message.mentioned:
-        return  # Ignore if chatbot is disabled and bot is not mentioned
+        return
 
     await app.send_chat_action(chat_id, ChatAction.TYPING)
-    reply = chatbot_api.ask_question(message.text)
+    reply = await chatbot_api.ask_question(message.text)
     await message.reply_text(reply or "❖ ChatBot Error. Contact @AsuraaSupports.")
 
 
