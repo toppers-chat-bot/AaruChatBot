@@ -6,7 +6,6 @@ from pyrogram.enums import ChatAction
 from ChatBot import app
 from ChatBot.database import is_chatbot_enabled, enable_chatbot, disable_chatbot, chatbot_api, is_admins
 
-
 async def text_filter(_, __, m: Message):
     """Filters valid chatbot messages."""
     return (
@@ -32,7 +31,7 @@ async def chatbot(_, message: Message):
         return
 
     await app.send_chat_action(chat_id, ChatAction.TYPING)
-    reply = await chatbot_api.ask_question(message.text)
+    reply = chatbot_api.ask_question(message.text)
     await message.reply_text(reply or "❖ ChatBot Error. Contact @AsuraaSupports.")
 
 
