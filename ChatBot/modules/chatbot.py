@@ -29,7 +29,7 @@ async def chatbot(_, message: Message):
     chat_id = message.chat.id
 
     if not await is_chatbot_enabled(chat_id) and not message.mentioned:
-        return  # Ignore if chatbot is disabled and bot is not mentioned
+        return
 
     await app.send_chat_action(chat_id, ChatAction.TYPING)
     reply = await chatbot_api.ask_question(message.text)
