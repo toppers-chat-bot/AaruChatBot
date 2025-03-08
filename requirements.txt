@@ -1,3 +1,15 @@
+pymongo
+motor
+requests
+dnspython
+tgcrypto
+asyncio
+python-dotenv
+aiohttp
+cloudscraper
+git+https://github.com/Mayuri-Chan/pyrofork
+
+
 Flask==1.1.2
 gunicorn==20.1.0
 Jinja2==3.0.3
