@@ -99,6 +99,9 @@ I'm here to chat, vibe, and bring some fun to your day.
 ⬤ /ping ➥ Check if I'm online.  
 ⬤ /stats ➥ Get chat stats.  
 ⬤ /chatbot ➥ Toggle AI replies (only works in groups).  
+⬤ /kiss ➥ Get a virtual kiss from me. 😘  
+⬤ /hug ➥ Let me wrap you in a warm hug. 🤗 
+⬤ /waifu ➥ Want a cute waifu image? Just drop a tag, and I'll fetch one for you. 💕
 
 Stay sharp, stay awesome. ✨  
 """
